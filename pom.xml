@@ -9,6 +9,15 @@
 	<artifactId>totp</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<name>TOTP lib RFC 6283</name>
+	<scm>
+		<connection>scm:git:git@github.com:taimos/totp.git</connection>
+		<developerConnection>scm:git:git@github.com:taimos/totp.git</developerConnection>
+		<url>scm:git:git@github.com:taimos/totp.git</url>
+	</scm>
+	<issueManagement>
+		<system>github</system>
+		<url>https://github.com/taimos/totp/issues</url>
+	</issueManagement>
 	<dependencies>
 		<dependency>
 			<groupId>commons-codec</groupId>
