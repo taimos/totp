@@ -7,7 +7,7 @@
 	</parent>
 	<artifactId>totp</artifactId>
 	<version>1.1-SNAPSHOT</version>
-	<name>TOTP lib RFC 6283</name>
+	<name>TOTP lib RFC 6238</name>
 	<scm>
 		<connection>scm:git:git@github.com:taimos/totp.git</connection>
 		<developerConnection>scm:git:git@github.com:taimos/totp.git</developerConnection>
