@@ -44,6 +44,12 @@ public final class TOTP {
 		return System.currentTimeMillis() / 30000;
 	}
 
+	private static String getOTPBySeconds(final int sec, final String key) {
+		int milliSec = sec * 1000;
+		long steps =  System.currentTimeMillis() / milliSec;
+		return getOTP( step, key);
+	}
+
 	private static String getOTP(final long step, final String key) {
 		String steps = Long.toHexString(step).toUpperCase();
 		while (steps.length() < 16) {
