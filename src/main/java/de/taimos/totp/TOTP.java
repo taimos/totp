@@ -44,6 +44,12 @@ public final class TOTP {
 		return System.currentTimeMillis() / 30000;
 	}
 
+	private static String getOTPBySeconds(final int sec, final String key) {
+		int milliSec = sec * 1000;
+		long steps =  System.currentTimeMillis() / milliSec;
+		return getOTP( step, key);
+	}
+
 	private static String getOTP(final long step, final String key) {
 		if (step < 0) {
 			throw new IllegalArgumentException("Step must be greater than or equal to zero.");
