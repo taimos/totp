@@ -36,7 +36,7 @@ public final class TOTP {
 	}
 
 	private static boolean validate(final long step, final String key, final String otp) {
-		return TOTP.getOTP(step, key).equals(otp) || TOTP.getOTP(step - 1, key).equals(otp);
+		return TOTP.getOTP(step, key).equals(otp) || (step > 0 && TOTP.getOTP(step - 1, key).equals(otp));
 	}
 
 	private static long getStep() {
@@ -45,6 +45,9 @@ public final class TOTP {
 	}
 
 	private static String getOTP(final long step, final String key) {
+		if (step < 0) {
+			throw new IllegalArgumentException("Step must be greater than or equal to zero.");
+		}
 		String steps = Long.toHexString(step).toUpperCase();
 		while (steps.length() < 16) {
 			steps = "0" + steps;
